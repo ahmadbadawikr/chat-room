@@ -12,5 +12,11 @@ consumer.subscriptions.create({ channel: "RoomChannel", room_id: 3}, {
 
   received(data) {
     console.log(data)
+
+    const element = document.getElementById('user-id');
+    const user_id = element.getAttribute('data-user-id');
+    
+    const messageContainer = document.getElementById('messages')
+    messageContainer.innerHTML = messageContainer.innerHTML + data.html
   }
 });
